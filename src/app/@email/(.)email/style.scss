@@ -1,0 +1,15 @@
+.modal {
+    position: absolute;
+    right: 60px;
+    background-color: rgba(0, 0, 0, 0.66);
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.close {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
