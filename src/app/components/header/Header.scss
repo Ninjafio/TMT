@@ -24,4 +24,9 @@
 
 .contact {
     width: 49px;
+    transition: .3s;
+}
+
+.contact:hover {
+    filter: brightness(1.75);
 }
