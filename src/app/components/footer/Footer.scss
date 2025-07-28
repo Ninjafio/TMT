@@ -1,0 +1,59 @@
+.Footer {
+    background-color: #2e2e2e;
+    height: 320px;
+}
+
+.Footer_wrapper {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    font-size: 26px;
+}
+
+.Footer_bottom-sign {
+    color: #CACACA;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.ToTop {
+    cursor: pointer;
+    max-width: 117px;
+    max-height: 117px;
+    transition: .3s;
+}
+
+.ToTop:hover {
+    filter: brightness(1.75);
+}
+
+.Footer__list {
+    list-style: none;
+}
+
+.Footer__list_address {
+    text-transform: uppercase;
+    max-width: 584px;
+    list-style-image: url(../../../../public/AddressPointerFuta.svg);
+}
+
+.Footer__list_phone {
+    list-style-image: url(../../../../public/PhoneFuta.svg);
+}
+
+.Footer__list_email {
+    list-style-image: url(../../../../public/EmailFuta.svg);
+}
+
+.Footer__list li:first-child {
+    list-style: none;
+    font-weight: 600;
+    margin-bottom: 28px;
+    margin-left: -25px;
+}
+
+.Footer__list li:last-child {
+    margin-top: 20px;
+}
