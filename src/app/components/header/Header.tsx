@@ -4,6 +4,8 @@ import React from "react";
 import Logo from "public/Logo.svg";
 import Phone from "public/Phone.svg";
 import Email from "public/Email.svg";
+import Burger from "public/Burger.svg";
+import Close from "public/Close.svg"
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,49 +15,140 @@ import { useEffect } from "react";
 import "./Header.scss";
 
 const Header = () => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [strokeWidth, setStrokeWidth] = React.useState<number>(0);
   const [strokeMarginLeft, setStrokeMarginLeft] = React.useState<number>(0);
+  const [strokeWidth, setStrokeWidth] = React.useState<number>(0);
+  const [screenWidth, setScreenWidth] = React.useState<number>(0);
+  const [isHover, setIsHover] = React.useState<boolean>(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
-  if (pathname === "/") {
-      setStrokeWidth(120);
-      setStrokeMarginLeft(0);
-  }
-  }, [])
+    if (pathname === "/" && !isHover) {
+        if (screenWidth > 1230) {
+          setStrokeWidth(120);
+          setStrokeMarginLeft(0);
+        }
+        if (screenWidth <= 1230) {
+          setStrokeWidth(91);
+          setStrokeMarginLeft(0);
+        }
+        if (screenWidth <= 970) {
+          setStrokeWidth(73);
+          setStrokeMarginLeft(0);
+        }
+        if (screenWidth <= 800) {
+          setStrokeWidth(64);
+          setStrokeMarginLeft(0);
+        }
+    }
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
 
+    setScreenWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   const handleOnMouseEnter = (element: string) => {
+    setIsHover(true)
     switch (element) {
       case "main":
-      setStrokeWidth(120);
-      setStrokeMarginLeft(0);
+        if (screenWidth > 1230) {
+          setStrokeWidth(120);
+          setStrokeMarginLeft(0);
+        }
+        if (screenWidth <= 1230) {
+          setStrokeWidth(91);
+          setStrokeMarginLeft(0);
+        }
+        if (screenWidth <= 970) {
+          setStrokeWidth(73);
+          setStrokeMarginLeft(0);
+        }
+        if (screenWidth <= 800) {
+          setStrokeWidth(64);
+          setStrokeMarginLeft(0);
+        }
         break;
       case "uslugi":
-      setStrokeWidth(100);
-      setStrokeMarginLeft(153);
-        console.log("aaa");
+        if (screenWidth > 1230) {
+        setStrokeWidth(100);
+        setStrokeMarginLeft(153);
+        }
+        if (screenWidth <= 1230) {
+        setStrokeWidth(77);
+        setStrokeMarginLeft(126);
+        }
+        if (screenWidth <= 970) {
+        setStrokeWidth(62);
+        setStrokeMarginLeft(94);
+        }
+        if (screenWidth <= 800) {
+          setStrokeWidth(54);
+          setStrokeMarginLeft(73);
+        }
         break;
       case "consult":
-      setStrokeWidth(363);
-      setStrokeMarginLeft(290);
-        console.log("aaa");
+        if (screenWidth > 1230) {
+        setStrokeWidth(363);
+        setStrokeMarginLeft(290);
+        }
+        if (screenWidth <= 1230) {
+        setStrokeWidth(279);
+        setStrokeMarginLeft(238);
+        }
+        if (screenWidth <= 970) {
+        setStrokeWidth(223);
+        setStrokeMarginLeft(176);
+        }
+        if (screenWidth <= 800) {
+          setStrokeWidth(195);
+          setStrokeMarginLeft(139);
+        }
         break;
       case "contacts":
-      setStrokeWidth(140);
-      setStrokeMarginLeft(686);
-        console.log("aaa");
+        if (screenWidth > 1230) {
+        setStrokeWidth(140);
+        setStrokeMarginLeft(686);
+        }
+        if (screenWidth <= 1230) {
+        setStrokeWidth(107);
+        setStrokeMarginLeft(551);
+        }
+        if (screenWidth <= 970) {
+        setStrokeWidth(86);
+        setStrokeMarginLeft(419);
+        }
+        if (screenWidth <= 800) {
+          setStrokeWidth(75);
+          setStrokeMarginLeft(344);
+        }
         break;
     }
   };
 
   const handleOnMouseLeave = () => {
-  if (pathname === "/") {
-      setStrokeWidth(120);
-      setStrokeMarginLeft(0);
-  }
-  }
+    setIsHover(false)
+    if (pathname === "/") {
+        if (screenWidth > 1230) {
+          setStrokeWidth(120);
+          setStrokeMarginLeft(0);
+        }
+        if (screenWidth <= 1230) {
+          setStrokeWidth(91);
+          setStrokeMarginLeft(0);
+        }
+        if (screenWidth <= 970) {
+          setStrokeWidth(73);
+          setStrokeMarginLeft(0);
+        }
+    }
+  };
 
   return (
     <>
@@ -97,15 +190,12 @@ const Header = () => {
             </Link>
           </div>
           <motion.div
-            style={{
-              backgroundColor: "#D1005E",
-              height: "5px",
-            }}
             animate={{
               width: strokeWidth,
               marginLeft: strokeMarginLeft,
             }}
             transition={{ duration: 0.3 }}
+            className="stroke"
           ></motion.div>
         </div>
 
@@ -117,6 +207,38 @@ const Header = () => {
             <Image src={Email} className="contact" alt="TMT" />
           </Link>
         </div>
+            <Image src={Burger} className="burger" alt="TMT" />
+      </div>
+      <div className="side_menu">
+      <Image src={Close} alt="x" className="side_menu_close" onClick={() => {}} />
+          <div className="side_menu_nav">
+            <Link
+              href={""}
+              className="side_menu_nav-link"
+            >
+              главная
+            </Link>
+            <Link
+              href={""}
+              className="side_menu_nav-link"
+            >
+              услуги
+            </Link>
+            <Link
+              href={""}
+              className="side_menu_nav-link"
+            >
+              получить консультацию
+            </Link>
+            <Link
+              href={""}
+              className="side_menu_nav-link"
+            >
+              контакты
+            </Link>
+          </div>
+      </div>
+      <div className="backround">
       </div>
     </>
   );

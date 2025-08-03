@@ -2,7 +2,7 @@ import "./style.css";
 
 export default function Main() {
   return (
-    <main>
+    <main className="main">
       <div className="takisawa"></div>
       <h2 className="title">О КОМПАНИИ</h2>
       <div className="line"></div>
@@ -15,28 +15,28 @@ export default function Main() {
         обслуживание металлообрабатывающих станков различных групп, таких как
         токарные, фрезерные и шлифовальные. Компания обладает аккредитацией
         сервисного партнёра тайваньских и корейских производителей станочного
-        оборудования брендов
+        оборудования брендов 
         <a className="link" href="https://kafo.su/">
-          KAFO,
+          KAFO,  
         </a>
         <a
           className="link"
           href="https://www.directindustry.com.ru/prod/hnk-machine-tool-37396.html"
         >
-          HNK,
+          HNK, 
         </a>
         <a className="link" href="http://www.hanmachine.ru/">
-          HANKOOK,
+          HANKOOK, 
         </a>
         <a
           className="link"
           href="https://www.stankisti.ru/product-category/rastochnoe-oborudovanie/femco-tajvan/"
         >
-          FEMCO
+          FEMCO 
         </a>
-        и
+        и 
         <a className="link" href="https://ru.altado.si/">
-          ALTADO,
+          ALTADO, 
         </a>
         что позволяет ей обеспечивать высокий уровень сервиса и технической
         поддержки своим клиентам.

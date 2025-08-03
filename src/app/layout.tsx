@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TMT",
+  title: "Takasawa Machine Tool",
   description: "TАКАСАВА МАШИН ТУЛ",
   icons:"./favicon.ico"
 };
