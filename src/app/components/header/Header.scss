@@ -1,47 +1,169 @@
 .Header {
-    margin: 0 auto;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .nav {
-    display: flex;
-}
-
-.worm {
-    width: 100px;
-    height: 100px;
+  display: flex;
 }
 
 .nav-link {
-    text-transform: uppercase;
-    font-size: 26px;
-    font-weight: 500;
-    padding-right: 34px;
+  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: 500;
+  padding-right: 34px;
 }
 
 .nav-link:last-child {
-    padding-right: 0px;
+  padding-right: 0px;
 }
 
 .contacts {
-    display: flex;
-    gap: 16px;
+  display: flex;
+  gap: 16px;
 }
 
 .contact {
-    width: 49px;
-    transition: .3s;
+  width: 49px;
+  transition: 0.3s;
 }
 
 .contact:hover {
-    filter: brightness(1.75);
+  filter: brightness(1.75);
 }
 
 .stroke {
-    background-color: #D1005E;
-    height: 10px;
-    width: 30px;
+  background-color: #d1005e;
+  height: 5px;
+}
+
+.burger {
+  display: none;
+}
+
+.backround {
+  background-color: #00000070;
+  position: fixed;
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  top: 0;
+}
+
+.side_menu {
+  display: none;
+  background-color: #d1005e;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px;
+  right: 0;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.side_menu_close {
+  width: 45px;
+  height: 45px;
+  filter: brightness(100);
+}
+
+.side_menu_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+@media (max-width: 1230px) {
+  .nav-link {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .contact {
+    width: 40px;
+  }
+}
+
+@media (max-width: 970px) {
+  .nav-link {
+    font-size: 16px;
+    padding-right: 20px;
+  }
+
+  .logo {
+    width: 130px;
+  }
+
+  .contact {
+    width: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav-link {
+    font-size: 14px;
+    padding-right: 10px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .contact {
+    width: 35px;
+  }
+
+  .stroke {
+    height: 4px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+  .stroke {
+    display: none;
+  }
+
+  .Header {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-end;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .contact {
+    width: 45px;
+  }
+
+  .burger {
+    display: block;
+    width: 45px;
+    height: 45px;
+    align-self: center;
+    cursor: pointer;
+  }
+
+  .side_menu {
+    display: block;
+    position: fixed;
+  }
+  
+  .backround {
+    display: block;
+  }
 }
