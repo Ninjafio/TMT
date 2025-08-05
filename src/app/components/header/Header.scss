@@ -70,6 +70,7 @@
   width: 45px;
   height: 45px;
   filter: brightness(100);
+  cursor: pointer;
 }
 
 .side_menu_nav {
@@ -165,5 +166,22 @@
   
   .backround {
     display: block;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .Header {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 370px) {
+  .Header {
+    gap: 10px;
+  }
+
+  .contact {
+    width: 30px;
   }
 }

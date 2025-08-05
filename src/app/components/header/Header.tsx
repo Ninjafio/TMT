@@ -18,6 +18,8 @@ const Header = () => {
   const [strokeMarginLeft, setStrokeMarginLeft] = React.useState<number>(0);
   const [strokeWidth, setStrokeWidth] = React.useState<number>(0);
   const [screenWidth, setScreenWidth] = React.useState<number>(0);
+  const [sideMenuMargin, setSideMenuMargin] = React.useState<number>(270);
+  const [isOpenSideMenu, setIsOpenSideMenu] = React.useState<boolean>(false);
   const [isHover, setIsHover] = React.useState<boolean>(false);
   const pathname = usePathname();
   const router = useRouter();
@@ -150,6 +152,16 @@ const Header = () => {
     }
   };
 
+  const handleSideMenuOpen = () => {
+    setIsOpenSideMenu(!isOpenSideMenu)
+    if (isOpenSideMenu) {
+      setSideMenuMargin(270) //Оно не успевает поменять состояние у isOpenSideMenu, так что это небольшой костыль
+    }
+    else {
+      setSideMenuMargin(0)
+    }
+  }
+
   return (
     <>
       <div className="Header">
@@ -207,10 +219,16 @@ const Header = () => {
             <Image src={Email} className="contact" alt="TMT" />
           </Link>
         </div>
-            <Image src={Burger} className="burger" alt="TMT" />
+            <Image src={Burger} className="burger" alt="TMT" onClick={() => handleSideMenuOpen()} />
       </div>
-      <div className="side_menu">
-      <Image src={Close} alt="x" className="side_menu_close" onClick={() => {}} />
+      <motion.div 
+      className="side_menu"
+      animate={{
+        marginRight: -sideMenuMargin
+      }}
+      transition={{ duration: 0.3 }}
+      >
+      <Image src={Close} alt="x" className="side_menu_close" onClick={() => handleSideMenuOpen()} />
           <div className="side_menu_nav">
             <Link
               href={""}
@@ -237,8 +255,8 @@ const Header = () => {
               контакты
             </Link>
           </div>
-      </div>
-      <div className="backround">
+      </motion.div>
+      <div className="backround" style={{display: `${isOpenSideMenu ? "block" : "none"}`}}>
       </div>
     </>
   );
