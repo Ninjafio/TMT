@@ -5,13 +5,13 @@ import Logo from "public/Logo.svg";
 import Phone from "public/Phone.svg";
 import Email from "public/Email.svg";
 import Burger from "public/Burger.svg";
-import Close from "public/Close.svg"
+import Close from "public/Close.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { ModalHeader } from "../index";
 import "./Header.scss";
 
 const Header = () => {
@@ -21,27 +21,66 @@ const Header = () => {
   const [sideMenuMargin, setSideMenuMargin] = React.useState<number>(270);
   const [isOpenSideMenu, setIsOpenSideMenu] = React.useState<boolean>(false);
   const [isHover, setIsHover] = React.useState<boolean>(false);
+  const [shownModalChildren, setShownModalChildren] =
+    React.useState<string>("");
+  const [isShownModal, setIsShownModal] = React.useState<boolean>(false);
+
   const pathname = usePathname();
-  const router = useRouter();
 
   useEffect(() => {
     if (pathname === "/" && !isHover) {
-        if (screenWidth > 1230) {
-          setStrokeWidth(120);
-          setStrokeMarginLeft(0);
-        }
-        if (screenWidth <= 1230) {
-          setStrokeWidth(91);
-          setStrokeMarginLeft(0);
-        }
-        if (screenWidth <= 970) {
-          setStrokeWidth(73);
-          setStrokeMarginLeft(0);
-        }
-        if (screenWidth <= 800) {
-          setStrokeWidth(64);
-          setStrokeMarginLeft(0);
-        }
+      if (screenWidth > 1230) {
+        setStrokeWidth(120);
+        setStrokeMarginLeft(0);
+      }
+      if (screenWidth <= 1230) {
+        setStrokeWidth(91);
+        setStrokeMarginLeft(0);
+      }
+      if (screenWidth <= 970) {
+        setStrokeWidth(73);
+        setStrokeMarginLeft(0);
+      }
+      if (screenWidth <= 800) {
+        setStrokeWidth(64);
+        setStrokeMarginLeft(0);
+      }
+    }
+    if (pathname.includes("Servise") && !isHover) {
+      if (screenWidth > 1230) {
+        setStrokeWidth(100);
+        setStrokeMarginLeft(153);
+      }
+      if (screenWidth <= 1230) {
+        setStrokeWidth(77);
+        setStrokeMarginLeft(126);
+      }
+      if (screenWidth <= 970) {
+        setStrokeWidth(62);
+        setStrokeMarginLeft(94);
+      }
+      if (screenWidth <= 800) {
+        setStrokeWidth(54);
+        setStrokeMarginLeft(73);
+      }
+    }
+    if (pathname.includes("getConsult") && !isHover) {
+      if (screenWidth > 1230) {
+        setStrokeWidth(363);
+        setStrokeMarginLeft(290);
+      }
+      if (screenWidth <= 1230) {
+        setStrokeWidth(279);
+        setStrokeMarginLeft(238);
+      }
+      if (screenWidth <= 970) {
+        setStrokeWidth(223);
+        setStrokeMarginLeft(176);
+      }
+      if (screenWidth <= 800) {
+        setStrokeWidth(195);
+        setStrokeMarginLeft(139);
+      }
     }
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -57,7 +96,7 @@ const Header = () => {
   });
 
   const handleOnMouseEnter = (element: string) => {
-    setIsHover(true)
+    setIsHover(true);
     switch (element) {
       case "main":
         if (screenWidth > 1230) {
@@ -79,16 +118,16 @@ const Header = () => {
         break;
       case "uslugi":
         if (screenWidth > 1230) {
-        setStrokeWidth(100);
-        setStrokeMarginLeft(153);
+          setStrokeWidth(100);
+          setStrokeMarginLeft(153);
         }
         if (screenWidth <= 1230) {
-        setStrokeWidth(77);
-        setStrokeMarginLeft(126);
+          setStrokeWidth(77);
+          setStrokeMarginLeft(126);
         }
         if (screenWidth <= 970) {
-        setStrokeWidth(62);
-        setStrokeMarginLeft(94);
+          setStrokeWidth(62);
+          setStrokeMarginLeft(94);
         }
         if (screenWidth <= 800) {
           setStrokeWidth(54);
@@ -97,16 +136,16 @@ const Header = () => {
         break;
       case "consult":
         if (screenWidth > 1230) {
-        setStrokeWidth(363);
-        setStrokeMarginLeft(290);
+          setStrokeWidth(363);
+          setStrokeMarginLeft(290);
         }
         if (screenWidth <= 1230) {
-        setStrokeWidth(279);
-        setStrokeMarginLeft(238);
+          setStrokeWidth(279);
+          setStrokeMarginLeft(238);
         }
         if (screenWidth <= 970) {
-        setStrokeWidth(223);
-        setStrokeMarginLeft(176);
+          setStrokeWidth(223);
+          setStrokeMarginLeft(176);
         }
         if (screenWidth <= 800) {
           setStrokeWidth(195);
@@ -115,16 +154,16 @@ const Header = () => {
         break;
       case "contacts":
         if (screenWidth > 1230) {
-        setStrokeWidth(140);
-        setStrokeMarginLeft(686);
+          setStrokeWidth(140);
+          setStrokeMarginLeft(686);
         }
         if (screenWidth <= 1230) {
-        setStrokeWidth(107);
-        setStrokeMarginLeft(551);
+          setStrokeWidth(107);
+          setStrokeMarginLeft(551);
         }
         if (screenWidth <= 970) {
-        setStrokeWidth(86);
-        setStrokeMarginLeft(419);
+          setStrokeWidth(86);
+          setStrokeMarginLeft(419);
         }
         if (screenWidth <= 800) {
           setStrokeWidth(75);
@@ -135,32 +174,31 @@ const Header = () => {
   };
 
   const handleOnMouseLeave = () => {
-    setIsHover(false)
-    if (pathname === "/") {
-        if (screenWidth > 1230) {
-          setStrokeWidth(120);
-          setStrokeMarginLeft(0);
-        }
-        if (screenWidth <= 1230) {
-          setStrokeWidth(91);
-          setStrokeMarginLeft(0);
-        }
-        if (screenWidth <= 970) {
-          setStrokeWidth(73);
-          setStrokeMarginLeft(0);
-        }
-    }
+    setIsHover(false);
   };
 
   const handleSideMenuOpen = () => {
-    setIsOpenSideMenu(!isOpenSideMenu)
+    setIsOpenSideMenu(!isOpenSideMenu);
     if (isOpenSideMenu) {
-      setSideMenuMargin(270) //Оно не успевает поменять состояние у isOpenSideMenu, так что это небольшой костыль
+      setSideMenuMargin(270); //Оно не успевает поменять состояние у isOpenSideMenu, так что это небольшой костыль
+    } else {
+      setSideMenuMargin(0);
     }
-    else {
-      setSideMenuMargin(0)
+  };
+
+  const handleClickContacts = (children: string) => {
+    const str = children;
+    if (isShownModal) {
+      setIsShownModal(false);
+    } else {
+      setIsShownModal(true);
+      setShownModalChildren(str);
     }
-  }
+    if (isShownModal && str != "") {
+      setIsShownModal(true);
+      setShownModalChildren(str);
+    }
+  };
 
   return (
     <>
@@ -169,7 +207,7 @@ const Header = () => {
         <div>
           <div className="nav">
             <Link
-              href={""}
+              href="/"
               className="nav-link"
               onMouseEnter={() => handleOnMouseEnter("main")}
               onMouseLeave={() => handleOnMouseLeave()}
@@ -177,7 +215,7 @@ const Header = () => {
               главная
             </Link>
             <Link
-              href={""}
+              href="/Servise/servise3"
               className="nav-link"
               onMouseEnter={() => handleOnMouseEnter("uslugi")}
               onMouseLeave={() => handleOnMouseLeave()}
@@ -185,7 +223,7 @@ const Header = () => {
               услуги
             </Link>
             <Link
-              href={""}
+              href="/getConsult"
               className="nav-link"
               onMouseEnter={() => handleOnMouseEnter("consult")}
               onMouseLeave={() => handleOnMouseLeave()}
@@ -212,52 +250,63 @@ const Header = () => {
         </div>
 
         <div className="contacts">
-          <Link href="/phone" onClick={() => router.back()}>
-            <Image src={Phone} className="contact" alt="TMT" />
+          <Image
+            src={Phone}
+            className="contact"
+            alt="TMT"
+            onClick={() => handleClickContacts("+7 985 (467) 16-29")}
+          />
+          <Image
+            src={Email}
+            className="contact"
+            alt="TMT"
+            onClick={() => handleClickContacts("ooo_tmt@mail.ru")}
+          />
+        </div>
+        <Image
+          src={Burger}
+          className="burger"
+          alt="TMT"
+          onClick={() => handleSideMenuOpen()}
+        />
+      </div>
+      <motion.div
+        className="side_menu"
+        animate={{
+          marginRight: -sideMenuMargin,
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <Image
+          src={Close}
+          alt="x"
+          className="side_menu_close"
+          onClick={() => handleSideMenuOpen()}
+        />
+        <div className="side_menu_nav">
+          <Link href="/" className="side_menu_nav-link">
+            главная
           </Link>
-          <Link href="/email" onClick={() => router.back()}>
-            <Image src={Email} className="contact" alt="TMT" />
+          <Link href="/Servise/servise3" className="side_menu_nav-link">
+            услуги
+          </Link>
+          <Link href={""} className="side_menu_nav-link">
+            получить консультацию
+          </Link>
+          <Link href={""} className="side_menu_nav-link">
+            контакты
           </Link>
         </div>
-            <Image src={Burger} className="burger" alt="TMT" onClick={() => handleSideMenuOpen()} />
-      </div>
-      <motion.div 
-      className="side_menu"
-      animate={{
-        marginRight: -sideMenuMargin
-      }}
-      transition={{ duration: 0.3 }}
-      >
-      <Image src={Close} alt="x" className="side_menu_close" onClick={() => handleSideMenuOpen()} />
-          <div className="side_menu_nav">
-            <Link
-              href={""}
-              className="side_menu_nav-link"
-            >
-              главная
-            </Link>
-            <Link
-              href={""}
-              className="side_menu_nav-link"
-            >
-              услуги
-            </Link>
-            <Link
-              href={""}
-              className="side_menu_nav-link"
-            >
-              получить консультацию
-            </Link>
-            <Link
-              href={""}
-              className="side_menu_nav-link"
-            >
-              контакты
-            </Link>
-          </div>
       </motion.div>
-      <div className="backround" style={{display: `${isOpenSideMenu ? "block" : "none"}`}}>
-      </div>
+      <div
+        className="backround"
+        style={{ display: `${isOpenSideMenu ? "block" : "none"}` }}
+      ></div>
+      <ModalHeader
+        children={shownModalChildren}
+        isShown={isShownModal}
+        handleClickContacts={handleClickContacts}
+      />
     </>
   );
 };
