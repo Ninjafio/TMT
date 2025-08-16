@@ -29,7 +29,7 @@ const Footer = () => {
         <li>Адрес</li>
         <li className='Footer__list_address'>129344, г. Москва, вн. тер. г. муниципальный округ Бабушкинский, ул. Верхоянская, д. 18, к. 2, помещ. 2П</li>
       </ul>
-      <Image src={UpArrow} alt='ToTop' className='ToTop' onClick={() => scrollToTop()}></Image>
+      {/* <Image src={UpArrow} alt='ToTop' className='ToTop' onClick={() => scrollToTop()}></Image> */}
       </div>
       <p className='Footer_bottom-sign'>OOO “TMT” 2017-2025 - ремонт машин и оборудования</p>
     </div>

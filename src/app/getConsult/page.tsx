@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import Image from "next/image";
+import fileImg from "public/file.svg";
 import "./style.css";
 
 interface FormData {
@@ -21,7 +23,9 @@ function formatBytes(bytes: number, decimals = 2): string {
   const dm = decimals < 0 ? 0 : decimals;
   const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return ` Размер файла: ${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+  return ` Размер файла: ${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${
+    sizes[i]
+  }`;
 }
 
 export default function ConsultationForm() {
@@ -174,7 +178,7 @@ export default function ConsultationForm() {
             })}
             onFocus={(e) => {
               if (e.target.value === "") {
-                e.target.value = "+";
+                e.target.value = "+7";
               }
             }}
           />
@@ -215,7 +219,9 @@ export default function ConsultationForm() {
 
           <label htmlFor="fileUpload" className="photoInp">
             <img src="/upload.png" alt="Добавить фото" className="photoIcon" />
-            Добавить еще фото или файл
+            {uploadedFiles.length == 0
+              ? "Добавить фото или файл"
+              : "Добавить ещё фото или файл"}
           </label>
 
           <input
@@ -241,7 +247,11 @@ export default function ConsultationForm() {
                       className="file-preview-image"
                     />
                   ) : (
-                    <div className="file-preview-icon"></div>
+                    <Image
+                      src={fileImg}
+                      alt="file"
+                      className="file-preview-icon"
+                    />
                   )}
                   <div className="file-info">
                     <span className="file-name">{file.name}</span>
