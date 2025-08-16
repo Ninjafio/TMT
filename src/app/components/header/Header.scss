@@ -101,7 +101,7 @@
   position: absolute;
   left: 635px;
   padding: 25px;
-  top: 100px;
+  top: 90px;
   color: #fff;
   font-size: 20px;
   text-align: center;
@@ -125,7 +125,29 @@
   text-align: center;
 }
 
+@media (max-width: 1670px) {
+  .servisesModal {
+    left: 500px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .servisesModal {
+    left: 400px;
+  }
+}
+
 @media (max-width: 1230px) {
+  .servisesModal {
+    left: 325px;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .servise {
+    max-width: 200px;
+  }
+
   .nav-link {
     font-size: 20px;
   }
@@ -140,6 +162,12 @@
 }
 
 @media (max-width: 970px) {
+  .servisesModal {
+    left: 250px;
+    padding: 15px;
+    font-size: 16px;
+  }
+
   .nav-link {
     font-size: 16px;
     padding-right: 20px;
@@ -155,6 +183,16 @@
 }
 
 @media (max-width: 800px) {
+  .servisesModal {
+    left: 200px;
+    padding: 15px;
+    font-size: 12px;
+  }
+
+  .servise {
+    max-width: 150px;
+  }
+
   .nav-link {
     font-size: 14px;
     padding-right: 10px;

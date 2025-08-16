@@ -91,6 +91,7 @@
   .Footer_bottom-sign {
     font-size: 16px;
   }
+
   .Footer_wrapper {
     color: #fff;
     display: flex;
@@ -98,21 +99,117 @@
     padding: 60px;
     font-size: 20px;
   }
+
   .logoFuta {
     width: 180px;
   }
 
   .Footer__list_address {
-    text-transform: uppercase;
     max-width: 490px;
-    background-image: url(../../../../public/AddressPointerFuta.svg);
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 20px;
-    padding: 0px 30px;
+  }
+  .Footer__list_email {
+    background-size: 22px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1050px) {
+  .logoFuta {
+    width: 140px;
+  }
 
+  .Footer_wrapper {
+    color: #fff;
+    padding: 60px;
+    font-size: 18px;
+  }
+
+  .Footer__list_address {
+    max-width: 400px;
+    background-size: 20px;
+  }
+
+  .Footer__list_phone {
+    background-size: 20px;
+  }
+
+  .Footer__list_email {
+    background-size: 20px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .Footer {
+    height: 220px;
+  }
+
+  .Footer__list_address {
+    max-width: 350px;
+  }
+
+  .Footer_wrapper {
+    color: #fff;
+    padding: 30px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .Footer__list_address {
+    max-width: 350px;
+  }
+
+  .Footer__list_email {
+    background-size: 18px;
+  }
+
+  .Footer_wrapper {
+    color: #fff;
+    padding: 15px;
+    padding-top: 30px;
+    font-size: 16px;
+  }
+
+  .Footer_bottom-sign {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 750px) {
+  .Footer {
+    height: 420px;
+  }
+
+  .Footer_wrapper {
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .Footer__list_address {
+    background-size: 20px;
+  }
+
+  .Footer__list_phone {
+    background-size: 20px;
+  }
+
+  .Footer__list_email {
+    background-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .Footer {
+    height: 600px;
+  }
+  .Footer__list {
+    width: 200px;
+    margin-top: 10px;
+  }
+  
+  .Footer_bottom-sign {
+    width: 200px;
+    display: flex;
+    margin: 0 auto;
+  }
 }
