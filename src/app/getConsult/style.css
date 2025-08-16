@@ -10,7 +10,7 @@ main {
   margin-bottom: 20px;
 }
 
-.error-message-checkbox{
+.error-message-checkbox {
   color: red;
   font-size: 0.875rem;
   margin-top: -35px;
@@ -24,141 +24,160 @@ main {
   cursor: pointer;
 }
 
-.consultTitle{
-    font-size: 26px;
-    text-decoration: underline #D1005E 3px ;
-    text-underline-offset: 4px;
+.consultTitle {
+  font-size: 26px;
+  text-decoration: underline #d1005e 3px;
+  text-underline-offset: 4px;
 }
 
-.consultSubtit{
-    text-decoration: none;
-    font-size: 20px;
-    color: #717171;
-    margin-top: 15px;
+.consultSubtit {
+  text-decoration: none;
+  font-size: 20px;
+  color: #717171;
+  margin-top: 15px;
 }
 
-.consultTitleBl{
-    margin-top: 92px;
+.consultTitleBl {
+  margin-top: 92px;
 }
 
-.formBl{
-    margin-top: 70px;
-    display: flex;
-    justify-content: center;
+.formBl {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
 }
 
-form{
-    width: 800px;
+form {
+  width: 800px;
 }
 
-.formInp1{
-    width: 800px;
-    margin-bottom: 30px;
-    padding: 15px 20px;
-    font-size: 26px;
-    border: 3px solid #D1005E;
+.formInp1 {
+  width: 800px;
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  font-size: 26px;
+  border: 3px solid #d1005e;
 }
 
-label{
-    display: flex;
-    color: red;
-    font-size: 20px;
+label {
+  display: flex;
+  color: red;
+  font-size: 20px;
 }
 
-.labelP{
-    color: black;
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 6px;
+.labelP {
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
 }
 
-.submitInp{
-    width: 226px;
-    height: 64px;
-    background-color: #D1005E;
-    font-size: 26px;
-    color: white;
-    font-weight: 200;
-    border: none;
-    margin-left: 277px;
+.submitInp {
+  width: 226px;
+  height: 64px;
+  background-color: #d1005e;
+  font-size: 26px;
+  color: white;
+  font-weight: 200;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 70px;
 }
 
-.areaInp{
-    width: 800px;
-    height: 179px;
-    border: 3px solid #D1005E;
-    resize: none;
-    padding: 15px 20px;
-    font-size: 26px;
-    margin-bottom: 30px;
+.areaInp {
+  width: 800px;
+  height: 179px;
+  border: 3px solid #d1005e;
+  resize: none;
+  padding: 15px 20px;
+  font-size: 26px;
+  margin-bottom: 30px;
 }
 
-.confLink{
-    color: #D1005E;
-    font-weight: 500;
-    font-size: 20px;
-    text-decoration: underline;
+.confLink {
+  color: #d1005e;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: underline;
 }
 
-.confTxt{
-    font-size: 20px;
-    padding-left: 10px;
+.confTxt {
+  font-size: 20px;
+  padding-left: 10px;
 }
 
-.inpDiv{
-    display: flex;
-    width: 516px;
-    margin-bottom: 36px;
-    justify-content: space-between;
-    margin-left: 137px;
+.inpDiv {
+  display: flex;
+  width: 516px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
-.photoInp{
-    width: 800px;
-    height: 110px;
-    border: 3px solid #D1005E;
-    margin-bottom: 25px;
-    background-image: url('/public/uploadBg.png');
-    display: 'inline-block';
-    color:black;
-    padding: 15px 0px 20px 240px;
-    font-weight: 500;
-    background-image: url('/public/uploadBg.png'); /* путь к изображению */
-    background-size: cover; /* или contain, или конкретные размеры */
-    background-position: center; /* позиция изображения */
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
+.photoInp {
+  width: 800px;
+  height: 110px;
+  border: 3px solid #d1005e;
+  margin-bottom: 25px;
+  color: black;
+  font-weight: 500;
+  background-image: url("/public/uploadBg.png"); /* путь к изображению */
+  background-size: cover; /* или contain, или конкретные размеры */
+  background-position: center; /* позиция изображения */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-#checkbox{
-   width: 20px;
-   height: 20px;
+#checkbox {
+  width: 20px;
+  height: 20px;
 }
 
-.photoIcon{
-    width: 40px;
-    height: 40px;
-    margin-left: 100px;
-    margin-bottom: 10px
+.photoIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
 }
 
-.file-item{
-    list-style-type: none;
-    margin-top: 20px;
+.file-item {
+  list-style-type: none;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
 }
 
-.file-remove-button{
-    background-color: #D1005E;
-    font-size: 40px;
-    padding: 2px 11px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.file-remove-button {
+  background-color: #d1005e;
+  font-size: 40px;
+  padding: 2px 11px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
 
-.file-preview-container{
-    font-size: 20px;
-    font-weight: 400;
+.file-preview-container {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.file-preview-image {
+  background-color: #0000002a;
+}
+
+.file-preview-icon {
+  background-image: url(../../../public/file.svg);
 }
 
 .file-preview-image,

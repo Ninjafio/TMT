@@ -24,6 +24,9 @@ const Header = () => {
   const [shownModalChildren, setShownModalChildren] =
     React.useState<string>("");
   const [isShownModal, setIsShownModal] = React.useState<boolean>(false);
+  const [isHoverServisesTitle, setIsHoverServisesTitle] =
+    React.useState<boolean>(false);
+  const [isHoverServises, setIsHoverServises] = React.useState<boolean>(false);
 
   const pathname = usePathname();
 
@@ -200,6 +203,8 @@ const Header = () => {
     }
   };
 
+  const handleHoverServises = () => {};
+
   return (
     <>
       <div className="Header">
@@ -214,14 +219,19 @@ const Header = () => {
             >
               главная
             </Link>
-            <Link
-              href="/Servise/servise3"
+            <span
               className="nav-link"
-              onMouseEnter={() => handleOnMouseEnter("uslugi")}
-              onMouseLeave={() => handleOnMouseLeave()}
+              onMouseEnter={() => {
+                handleOnMouseEnter("uslugi");
+                setIsHoverServisesTitle(true);
+              }}
+              onMouseLeave={() => {
+                handleOnMouseLeave();
+                setIsHoverServisesTitle(false);
+              }}
             >
               услуги
-            </Link>
+            </span>
             <Link
               href="/getConsult"
               className="nav-link"
@@ -287,9 +297,18 @@ const Header = () => {
           <Link href="/" className="side_menu_nav-link">
             главная
           </Link>
-          <Link href="/Servise/servise3" className="side_menu_nav-link">
-            услуги
-          </Link>
+          <div className="side_menu_servises">
+            <span>услуги</span>
+            <Link href="/Servise/servise1" className="side_menu_nav-link">
+              ремонт оборудования
+            </Link>
+            <Link href="/Servise/servise2" className="side_menu_nav-link">
+              Модернизация оборудования
+            </Link>
+            <Link href="/Servise/servise3" className="side_menu_nav-link">
+              Станко-ремонтное производство
+            </Link>
+          </div>
           <Link href={""} className="side_menu_nav-link">
             получить консультацию
           </Link>
@@ -302,6 +321,25 @@ const Header = () => {
         className="backround"
         style={{ display: `${isOpenSideMenu ? "block" : "none"}` }}
       ></div>
+
+      {(isHoverServisesTitle || isHoverServises) && (
+        <div
+          className="servisesModal"
+          onMouseEnter={() => setIsHoverServises(true)}
+          onMouseLeave={() => setIsHoverServises(false)}
+        >
+          <Link href="/Servise/servise1" className="servise">
+            ремонт оборудования
+          </Link>
+          <Link href="/Servise/servise2" className="servise">
+            Модернизация оборудования
+          </Link>
+          <Link href="/Servise/servise3" className="servise">
+            Станко-ремонтное производство
+          </Link>
+        </div>
+      )}
+
       <ModalHeader
         children={shownModalChildren}
         isShown={isShownModal}
