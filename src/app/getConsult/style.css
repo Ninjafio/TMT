@@ -186,3 +186,77 @@ label {
   height: 100px;
   flex-shrink: 0;
 }
+
+@media (max-width: 870px) {
+  .formInp1 {
+    width: 500px;
+  }
+
+  .formBl form {
+    width: 500px;
+  }
+
+  .areaInp {
+    width: 500px;
+  }
+
+  .photoInp {
+    width: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  .formInp1 {
+    width: 400px;
+  }
+
+  .formBl form {
+    width: 400px;
+  }
+
+  .areaInp {
+    width: 400px;
+  }
+
+  .photoInp {
+    width: 400px;
+  }
+
+  .confTxt {
+    width: 400px;
+  }
+
+  .inpDiv {
+    width: 300px;
+  }
+}
+
+@media (max-width: 425px) {
+  .formInp1 {
+    width: 300px;
+    font-size: 14px;
+  }
+
+  .formBl form {
+    width: 300px;
+  }
+
+  .areaInp {
+    width: 300px;
+  }
+
+  .photoInp {
+    width: 300px;
+  }
+
+  .confTxt {
+    width: 250px;
+  }
+
+  .file-info {
+    font-size: 16px;
+  }
+  .file-preview-icon {
+    width: 40px;
+  }
+}

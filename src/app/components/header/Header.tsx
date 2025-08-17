@@ -85,6 +85,24 @@ const Header = () => {
         setStrokeMarginLeft(139);
       }
     }
+    if (pathname.includes("contacts") && !isHover) {
+      if (screenWidth > 1230) {
+        setStrokeWidth(140);
+        setStrokeMarginLeft(686);
+      }
+      if (screenWidth <= 1230) {
+        setStrokeWidth(107);
+        setStrokeMarginLeft(551);
+      }
+      if (screenWidth <= 970) {
+        setStrokeWidth(86);
+        setStrokeMarginLeft(419);
+      }
+      if (screenWidth <= 800) {
+        setStrokeWidth(75);
+        setStrokeMarginLeft(344);
+      }
+    }
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
@@ -241,7 +259,7 @@ const Header = () => {
               получить консультацию
             </Link>
             <Link
-              href={""}
+              href="/contacts"
               className="nav-link"
               onMouseEnter={() => handleOnMouseEnter("contacts")}
               onMouseLeave={() => handleOnMouseLeave()}
@@ -309,10 +327,10 @@ const Header = () => {
               Станко-ремонтное производство
             </Link>
           </div>
-          <Link href={""} className="side_menu_nav-link">
+          <Link href="/getConsult" className="side_menu_nav-link">
             получить консультацию
           </Link>
-          <Link href={""} className="side_menu_nav-link">
+          <Link href="/contacts" className="side_menu_nav-link">
             контакты
           </Link>
         </div>
