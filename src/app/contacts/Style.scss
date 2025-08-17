@@ -29,6 +29,11 @@ body {
     color: $primary;
 }
 
+.map {
+    box-shadow: $primary 10px 10px 0px 0px;
+    width: 1078px;
+}
+
 @media (max-width: 1200px) {
 .map, .imap {
     width: 700px;
