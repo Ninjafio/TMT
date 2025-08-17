@@ -15,30 +15,34 @@ export default function Main() {
         обслуживание металлообрабатывающих станков различных групп, таких как
         токарные, фрезерные и шлифовальные. Компания обладает аккредитацией
         сервисного партнёра тайваньских и корейских производителей станочного
-        оборудования брендов 
+        оборудования брендов&nbsp;
         <a className="link" href="https://kafo.su/">
-          KAFO,  
+          KAFO
         </a>
+        ,&nbsp;
         <a
           className="link"
           href="https://www.directindustry.com.ru/prod/hnk-machine-tool-37396.html"
         >
-          HNK, 
+          HNK
         </a>
+        ,&nbsp;
         <a className="link" href="http://www.hanmachine.ru/">
-          HANKOOK, 
+          HANKOOK
         </a>
+        ,&nbsp;
+        <br className="whitespace" />
         <a
           className="link"
           href="https://www.stankisti.ru/product-category/rastochnoe-oborudovanie/femco-tajvan/"
         >
-          FEMCO 
+          FEMCO
         </a>
-        и 
+        &nbsp;и&nbsp;
         <a className="link" href="https://ru.altado.si/">
-          ALTADO, 
+          ALTADO
         </a>
-        что позволяет ей обеспечивать высокий уровень сервиса и технической
+        ,&nbsp;что позволяет ей обеспечивать высокий уровень сервиса и технической
         поддержки своим клиентам.
       </p>
     </main>

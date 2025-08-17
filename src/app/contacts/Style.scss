@@ -1,0 +1,80 @@
+$primary: #d1005e;
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.contacts-container {
+	margin: 70px 0 70px 60px;
+}
+
+.contacts-title {
+	font-size: 32px;
+	font-weight: 700;
+	max-width: 180px;
+	border-bottom: 4px solid $primary;
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-size: 26px;
+    margin-top: 75px;
+    margin-bottom: 50px;
+}
+
+.list-contact span {
+    color: $primary;
+}
+
+@media (max-width: 1200px) {
+.map, .imap {
+    width: 700px;
+}
+}
+
+@media (max-width: 800px) {
+.map, .imap {
+    width: 600px;
+    height: 450px;
+}
+}
+
+@media (max-width: 700px) {
+.map, .imap {
+    width: 500px;
+}
+}
+
+@media (max-width: 600px) {
+.map, .imap {
+    width: 400px;
+}
+}
+
+@media (max-width: 550px) {
+    .contacts-list {
+    gap: 30px;
+    font-size: 20px;
+}
+.map, .imap {
+    width: 300px;
+}
+}
+
+@media (max-width: 400px) {
+    .contacts-list {
+    gap: 25px;
+    font-size: 16px;
+    margin-top: 30px;
+    padding-right: 10px;
+}
+.map, .imap {
+    width: 300px;
+}
+.contacts-container {
+	margin: 70px 0 70px 30px;
+}
+}
