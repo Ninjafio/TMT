@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Image from "next/image";
 import fileImg from "public/file.svg";
 import "./style.css";
+import { Console } from "console";
 
 interface FormData {
   name: string;
@@ -41,21 +42,26 @@ export default function ConsultationForm() {
 
   // Обработчик добавления файлов
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newFiles = e.target.files;
-    if (newFiles) {
-      // Проверка на дубликаты по имени и размеру
-      const uniqueNewFiles = Array.from(newFiles).filter(
-        (newFile) =>
-          !uploadedFiles.some(
-            (existingFile) =>
-              existingFile.name === newFile.name &&
-              existingFile.size === newFile.size
-          )
-      );
-      setUploadedFiles((prev) => [...prev, ...uniqueNewFiles]);
-    }
-    e.target.value = ""; // очищаем инпут
-  };
+  const newFiles = e.target.files;
+  if (newFiles) {
+    const uniqueNewFiles = Array.from(newFiles).filter(
+      (newFile) =>
+        !uploadedFiles.some(
+          (existingFile) =>
+            existingFile.name === newFile.name &&
+            existingFile.size === newFile.size
+        )
+    );
+    const updatedFiles = [...uploadedFiles, ...uniqueNewFiles];
+    setUploadedFiles(updatedFiles);
+
+    // 🔥 Обновляем input[type=file], чтобы FormData видел файлы
+    const dt = new DataTransfer();
+    updatedFiles.forEach((file) => dt.items.add(file));
+    const fileInput = document.getElementById("fileUpload") as HTMLInputElement;
+    if (fileInput) fileInput.files = dt.files;
+  }
+};
 
   // Синхронизация с react-hook-form
   useEffect(() => {
@@ -71,12 +77,39 @@ export default function ConsultationForm() {
     );
   };
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    alert("Форма успешно отправлена!");
-    // Тут можно обработать отправку данных на сервер
-    //Алерт для проверки работоспособности формы, мы его уберем в конце
-  };
+const onSubmit: SubmitHandler<FormData> = async (data) => {
+  try {
+    const formData = new FormData();
 
+    // Добавляем текстовые поля
+    for (const [key, value] of Object.entries(data)) {
+      if (key !== "file") {
+        formData.append(key, value as string);
+      }
+    }
+
+    // Добавляем файлы из состояния
+    uploadedFiles.forEach((file) => {
+      formData.append("file", file, file.name);
+    });
+
+    const response = await fetch("/api/telegram", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      alert("Заявка успешно отправлена!");
+      setUploadedFiles([]); // очищаем состояние
+    } else {
+      alert("Ошибка: " + result.message);
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Ошибка при отправке формы");
+  }
+};
   return (
     <main>
       <div className="consultTitleBl">
@@ -105,6 +138,7 @@ export default function ConsultationForm() {
                 message: "Используйте только буквы и дефис, без пробелов.",
               },
               minLength: { value: 2, message: "Минимум 2 символа" },
+              maxLength: { value: 20, message: "Максимум 20 символов" },
             })}
           />
           {errors.name && (
@@ -126,6 +160,7 @@ export default function ConsultationForm() {
                 message: "Используйте только буквы и дефис, без пробелов.",
               },
               minLength: { value: 2, message: "Минимум 2 символа" },
+              maxLength: { value: 20, message: "Максимум 20 символов" },
             })}
           />
           {errors.fam && <p className="error-message">{errors.fam.message}</p>}
@@ -144,6 +179,7 @@ export default function ConsultationForm() {
                 message: "Используйте только буквы и дефис, без пробелов.",
               },
               minLength: { value: 2, message: "Минимум 2 символа" },
+              maxLength: { value: 20, message: "Максимум 20 символов" },
             })}
           />
           {errors.otch && (
@@ -158,7 +194,9 @@ export default function ConsultationForm() {
             type="text"
             id="org"
             placeholder="Введите название вашей организации (для юр. лиц)"
-            {...register("org")}
+            {...register("org", {
+              maxLength: { value: 20, message: "Максимум 20 символов" },
+            })}
           />
 
           <label htmlFor="phone">
@@ -168,17 +206,18 @@ export default function ConsultationForm() {
             type="tel"
             className="formInp1"
             id="phone"
-            placeholder="+7 (___) ___-__-__"
+            placeholder="+_ (___) ___-__-__"
             {...register("phone", {
               required: "Телефон обязателен для заполнения",
               pattern: {
                 value: /^[0-9+]+$/,
                 message: "Используйте только цифры, без пробелов",
               },
+              maxLength: { value: 20, message: "Максимум 20 символов" },
             })}
             onFocus={(e) => {
               if (e.target.value === "") {
-                e.target.value = "+7";
+                e.target.value = "+";
               }
             }}
           />
@@ -227,6 +266,7 @@ export default function ConsultationForm() {
           <input
             type="file"
             id="fileUpload"
+            name="file"
             multiple
             style={{ display: "none" }}
             onChange={handleFileChange}
