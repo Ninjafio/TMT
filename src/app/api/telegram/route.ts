@@ -52,22 +52,20 @@ export async function POST(req: Request) {
 
     for (const f of files) {
       if (f && f instanceof File) {
-        const buffer = Buffer.from(await f.arrayBuffer());
-
-        const form = new FormDataNode();
-        form.append("chat_id", chat_id);
+        const fd = new FormData(); // ✅ используем нативный FormData
+        fd.append("chat_id", chat_id);
 
         if (f.type.startsWith("image/")) {
-          form.append("photo", buffer, { filename: f.name, contentType: f.type });
+          fd.append("photo", f, f.name); // ✅ просто передаем File
           await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
             method: "POST",
-            body: form as any,
+            body: fd,
           });
         } else {
-          form.append("document", buffer, { filename: f.name, contentType: f.type });
+          fd.append("document", f, f.name);
           await fetch(`https://api.telegram.org/bot${token}/sendDocument`, {
             method: "POST",
-            body: form as any,
+            body: fd,
           });
         }
       }
