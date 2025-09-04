@@ -1,4 +1,4 @@
-import Main from "./main/page";
+import Main from "./Main/page";
 import styles from "./page.module.css";
 
 export default function Home() {

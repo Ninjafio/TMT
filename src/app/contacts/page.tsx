@@ -8,6 +8,9 @@ const Contacts = () => {
 
       <div className="contacts-list">
         <p className="list-contact">
+          <span>ИНН: </span>7716883631
+        </p>
+        <p className="list-contact">
           <span>Номер телефона: </span>+7 985 (467) 16-29
         </p>
         <p className="list-contact">
