@@ -4,6 +4,7 @@ import "./servise.scss";
 export default function ServisePage() {
   return (
     <div className="servise-container">
+      <div className="servise_header">
       <h1 className="servise-title">РЕМОНТ ОБОРУДОВАНИЯ</h1>
 
       <img
@@ -11,7 +12,8 @@ export default function ServisePage() {
         alt="Ремонт оборудования"
         className="servise-image"
       />
-
+      <img src={"/service1smol.png"} alt="" className="servise-image-smol" />
+</div>
       <div className="servise-content">
         <p>
           <br />

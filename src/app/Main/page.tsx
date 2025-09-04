@@ -1,9 +1,18 @@
+"use client"
+import { useEffect, useRef } from "react";
 import "./style.css";
+import useWindowSize from "../hooks/getWindowSize";
 
 export default function Main() {
+
+ const {width} = useWindowSize()
+
   return (
     <main className="main">
-      <div className="takisawa"></div>
+      <div className="takisawa">
+        <img src={"/BIIIIIGbanner.png"} alt="" className="takisawa_img_BIIIG"/> 
+        <img src={"/SMOOOOLBanner.png"} alt="" className="takisawa_img_SMOOOOL"/>
+      </div>
       <h2 className="title">О КОМПАНИИ</h2>
       <div className="line"></div>
       <p className="text">
@@ -16,10 +25,13 @@ export default function Main() {
         токарные, фрезерные и шлифовальные. Компания обладает аккредитацией
         сервисного партнёра тайваньских и корейских производителей станочного
         оборудования брендов&nbsp;
+        {width > 500 && width < 600 ? <><br></br></> : <></>}
+        
         <a className="link" href="https://kafo.su/">
           KAFO
         </a>
         ,&nbsp;
+        {width < 400 ? <><br></br></> : <></>}
         <a
           className="link"
           href="https://www.directindustry.com.ru/prod/hnk-machine-tool-37396.html"
@@ -47,4 +59,6 @@ export default function Main() {
       </p>
     </main>
   );
-}
+  }
+  
+

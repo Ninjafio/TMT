@@ -4,12 +4,15 @@ import "./servise2.scss";
 export default function ServisePage2() {
   return (
     <div className="servise-container2">
-      <h1 className="servise-title2">МОДЕРНИЗАЦИЯ ОБОРУДОВАНИЯ </h1>
-      <img
-        src={"/Servise2.svg"}
-        alt="Ремонт оборудования"
-        className="servise-image2"
-      />
+      <div className="service_header2">
+        <h1 className="servise-title2">МОДЕРНИЗАЦИЯ ОБОРУДОВАНИЯ </h1>
+        <img
+          src={"/Servise2.svg"}
+          alt="Ремонт оборудования"
+          className="servise-image2"
+        />
+        <img src={"/bannersmol.png"} alt="" className="servise-image2_smol"/>
+      </div>
 
       <div className="servise-content2">
         <p>
