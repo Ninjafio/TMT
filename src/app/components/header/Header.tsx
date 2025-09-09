@@ -4,7 +4,6 @@ import React from "react";
 import Logo from "public/Logo.svg";
 import Phone from "public/Phone.svg";
 import Email from "public/Email.svg";
-import Burger from "public/Burger.svg";
 import Close from "public/Close.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,8 +11,8 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { ModalHeader } from "../index";
-import "./Header.scss";
 import useWindowSize from "@/app/hooks/getWindowSize";
+import "./Header.scss";
 
 const Header = () => {
   const [strokeMarginLeft, setStrokeMarginLeft] = React.useState<number>(0);
@@ -22,11 +21,9 @@ const Header = () => {
   const [sideMenuMargin, setSideMenuMargin] = React.useState<number>(270);
   const [isOpenSideMenu, setIsOpenSideMenu] = React.useState<boolean>(false);
   const [isHover, setIsHover] = React.useState<boolean>(false);
-  const [shownModalChildren, setShownModalChildren] =
-    React.useState<string>("");
+  const [shownModalChildren, setShownModalChildren] = React.useState<string>("");
   const [isShownModal, setIsShownModal] = React.useState<boolean>(false);
-  const [isHoverServisesTitle, setIsHoverServisesTitle] =
-    React.useState<boolean>(false);
+  const [isHoverServisesTitle, setIsHoverServisesTitle] = React.useState<boolean>(false);
   const [isHoverServises, setIsHoverServises] = React.useState<boolean>(false);
 
   const pathname = usePathname();
@@ -222,8 +219,6 @@ const Header = () => {
     }
   };
 
-  const handleHoverServises = () => {};
-
  const {width} = useWindowSize()
   return (
     <>
@@ -381,9 +376,6 @@ const Header = () => {
         
         </>
         }
-        
-        
-         
       </div>
       <motion.div
         className="side_menu"

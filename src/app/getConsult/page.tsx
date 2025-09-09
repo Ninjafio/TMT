@@ -4,7 +4,6 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Image from "next/image";
 import fileImg from "public/file.svg";
 import "./style.css";
-import { Console } from "console";
 
 interface FormData {
   name: string;
@@ -55,7 +54,7 @@ export default function ConsultationForm() {
     const updatedFiles = [...uploadedFiles, ...uniqueNewFiles];
     setUploadedFiles(updatedFiles);
 
-    // 🔥 Обновляем input[type=file], чтобы FormData видел файлы
+    // Обновляем input[type=file], чтобы FormData видел файлы
     const dt = new DataTransfer();
     updatedFiles.forEach((file) => dt.items.add(file));
     const fileInput = document.getElementById("fileUpload") as HTMLInputElement;
@@ -321,7 +320,7 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
               <span className="confTxt">
                 Я согласен(на) на обработку{" "}
                 <a
-                  href="/"
+                  href="https://disk.yandex.ru/i/_WnrL9kOetdwKw"
                   className="confLink"
                   target="_blank"
                   rel="noopener noreferrer"

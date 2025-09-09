@@ -3,17 +3,17 @@
 import React from 'react'
 import Image from 'next/image'
 import Logo from 'public/LogoFuta.svg'
-import UpArrow from 'public/UpArrow.svg'
+//import UpArrow from 'public/UpArrow.svg'
 import "./Footer.scss"
 
 const Footer = () => {
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
-  }
+  // const scrollToTop = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth"
+  //   })
+  // }
 
   return (
     <div className='Footer'>

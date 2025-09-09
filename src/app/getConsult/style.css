@@ -2,9 +2,8 @@ main {
   margin-left: 60px;
   margin-right: 60px;
 }
-body{
-  
-	font-family: "Inter", sans-serif;
+body {
+  font-family: "Inter", sans-serif;
 }
 
 .error-message {
@@ -89,6 +88,7 @@ label {
   align-items: center;
   margin: 0 auto;
   margin-bottom: 70px;
+  cursor: pointer;
 }
 
 .areaInp {

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: *.scss
+Allow: *.ts
+
+User-agent: Googlebot
+Allow: *.scss
+Allow: *.ts
+
+Sitemap: https://takasawamachinetool.ru/sitemap.ts
