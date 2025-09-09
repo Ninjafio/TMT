@@ -320,7 +320,7 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
               <span className="confTxt">
                 Я согласен(на) на обработку{" "}
                 <a
-                  href="https://disk.yandex.ru/i/_WnrL9kOetdwKw"
+                  href="https://disk.yandex.ru/i/ZoO_G7cby9KtjA"
                   className="confLink"
                   target="_blank"
                   rel="noopener noreferrer"
