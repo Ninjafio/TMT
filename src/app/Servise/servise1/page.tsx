@@ -5,15 +5,15 @@ export default function ServisePage() {
   return (
     <div className="servise-container">
       <div className="servise_header">
-      <h1 className="servise-title">РЕМОНТ ОБОРУДОВАНИЯ</h1>
+        <h1 className="servise-title">РЕМОНТ ОБОРУДОВАНИЯ</h1>
 
-      <img
-        src={"/Servise.svg"}
-        alt="Ремонт оборудования"
-        className="servise-image"
-      />
-      <img src={"/service1smol.png"} alt="" className="servise-image-smol" />
-</div>
+        <img
+          src={"/Servise.svg"}
+          alt="Ремонт оборудования"
+          className="servise-image"
+        />
+        <img src={"/service1smol.png"} alt="" className="servise-image-smol" />
+      </div>
       <div className="servise-content">
         <p>
           <br />
@@ -40,9 +40,9 @@ export default function ServisePage() {
           является современное оборудование с обновленной электроникой и
           системами автоматизации, обеспечивающее долгую и надежную работу.
         </p>
-		<Link href="/getConsult">
+        <Link href="/getConsult">
           <button className="servise-btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
-		</Link>
+        </Link>
       </div>
     </div>
   );

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Close from "public/Close.svg";
-import "./style.scss";
 import React from "react";
+import "./style.scss";
 
 interface ModalHeaderProps {
   isShown: boolean;

@@ -1,12 +1,12 @@
 "use client"
-import Link from "next/link";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import "./servise3.scss";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import useWindowSize from "@/app/hooks/getWindowSize";
+import 'swiper/css/pagination';
+import "./servise3.scss";
+import 'swiper/css';
 
 export default function ServisePage3() {
 
