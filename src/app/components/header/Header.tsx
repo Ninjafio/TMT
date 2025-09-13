@@ -395,32 +395,32 @@ const Header = () => {
           onClick={() => handleSideMenuOpen()}
         />
         <div className="side_menu_nav">
-          <Link href="/" className="side_menu_nav-link">
+          <Link href="/" className="side_menu_nav-link" onClick={() => handleSideMenuOpen()}>
             главная
           </Link>
           <div className="side_menu_servises">
             <span>услуги</span>
-            <Link href="/Servise/servise1" className="side_menu_nav-link">
+            <Link href="/Servise/servise1" className="side_menu_nav-link" onClick={() => handleSideMenuOpen()}>
               ремонт оборудования
             </Link>
-            <Link href="/Servise/servise2" className="side_menu_nav-link">
+            <Link href="/Servise/servise2" className="side_menu_nav-link" onClick={() => handleSideMenuOpen()}>
               Модернизация оборудования
             </Link>
             <Link href="/Servise/servise3" className="side_menu_nav-link">
               Станко-ремонтное производство
             </Link>
           </div>
-          <Link href="/getConsult" className="side_menu_nav-link">
+          <Link href="/getConsult" className="side_menu_nav-link" onClick={() => handleSideMenuOpen()}>
             получить консультацию
           </Link>
-          <Link href="/contacts" className="side_menu_nav-link">
+          <Link href="/contacts" className="side_menu_nav-link" onClick={() => handleSideMenuOpen()}>
             контакты
           </Link>
         </div>
       </motion.div>
       <div
         className="backround"
-        style={{ display: `${isOpenSideMenu ? "block" : "none"}` }}
+        style={{ opacity: `${isOpenSideMenu ? "100" : "0"}` }}
       ></div>
 
       {(isHoverServisesTitle || isHoverServises) && (

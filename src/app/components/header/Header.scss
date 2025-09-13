@@ -59,6 +59,8 @@
   width: 100%;
   z-index: 9;
   top: 0;
+  transition: .3s;
+  pointer-events: none
 }
 
 .side_menu {
