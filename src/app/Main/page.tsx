@@ -1,7 +1,6 @@
 "use client"
-import { useEffect, useRef } from "react";
-import "./style.css";
 import useWindowSize from "../hooks/getWindowSize";
+import "./style.css";
 
 export default function Main() {
 
@@ -10,8 +9,8 @@ export default function Main() {
   return (
     <main className="main">
       <div className="takisawa">
-        <img src={"/BIIIIIGbanner.png"} alt="" className="takisawa_img_BIIIG"/> 
-        <img src={"/SMOOOOLBanner.png"} alt="" className="takisawa_img_SMOOOOL"/>
+        <img src={"/BIIIIIGbanner.png"} alt="Баннер" className="takisawa_img_BIIIG"/> 
+        <img src={"/SMOOOOLBanner.svg"} alt="Баннер" className="takisawa_img_SMOOOOL"/>
       </div>
       <h2 className="title">О КОМПАНИИ</h2>
       <div className="line"></div>
