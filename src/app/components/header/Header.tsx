@@ -228,7 +228,7 @@ const Header = () => {
         {width > 700 ? (
           <>
             <Link href="/" className="logo">
-              <Image src={Logo} alt="TMT" />
+              <Image src={Logo} className="logo" alt="TMT" />
             </Link>
             <div className="nav-container">
               <div className="nav">
