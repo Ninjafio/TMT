@@ -21,9 +21,11 @@ const Header = () => {
   const [sideMenuMargin, setSideMenuMargin] = React.useState<number>(270);
   const [isOpenSideMenu, setIsOpenSideMenu] = React.useState<boolean>(false);
   const [isHover, setIsHover] = React.useState<boolean>(false);
-  const [shownModalChildren, setShownModalChildren] = React.useState<string>("");
+  const [shownModalChildren, setShownModalChildren] =
+    React.useState<string>("");
   const [isShownModal, setIsShownModal] = React.useState<boolean>(false);
-  const [isHoverServisesTitle, setIsHoverServisesTitle] = React.useState<boolean>(false);
+  const [isHoverServisesTitle, setIsHoverServisesTitle] =
+    React.useState<boolean>(false);
   const [isHoverServises, setIsHoverServises] = React.useState<boolean>(false);
 
   const pathname = usePathname();
@@ -219,163 +221,163 @@ const Header = () => {
     }
   };
 
- const {width} = useWindowSize()
+  const { width } = useWindowSize();
   return (
     <>
       <div className="Header">
-        
-        {width > 700 ? 
-        <> 
-        <Image src={Logo} className="logo" alt="TMT" />
-          <div>
-            <div className="nav">
-              <Link
-                href="/"
-                className="nav-link"
-                onMouseEnter={() => handleOnMouseEnter("main")}
-                onMouseLeave={() => handleOnMouseLeave()}
-              >
-                главная
-              </Link>
-              <span
-                className="nav-link"
-                onMouseEnter={() => {
-                  handleOnMouseEnter("uslugi");
-                  setIsHoverServisesTitle(true);
+        {width > 700 ? (
+          <>
+            <Link href="/" className="logo">
+              <Image src={Logo} alt="TMT" />
+            </Link>
+            <div className="nav-container">
+              <div className="nav">
+                <Link
+                  href="/"
+                  className="nav-link"
+                  onMouseEnter={() => handleOnMouseEnter("main")}
+                  onMouseLeave={() => handleOnMouseLeave()}
+                >
+                  главная
+                </Link>
+                <span
+                  className="nav-link pointer"
+                  onMouseEnter={() => {
+                    handleOnMouseEnter("uslugi");
+                    setIsHoverServisesTitle(true);
+                  }}
+                  onMouseLeave={() => {
+                    handleOnMouseLeave();
+                    setIsHoverServisesTitle(false);
+                  }}
+                >
+                  услуги
+                </span>
+                <Link
+                  href="/getConsult"
+                  className="nav-link"
+                  onMouseEnter={() => handleOnMouseEnter("consult")}
+                  onMouseLeave={() => handleOnMouseLeave()}
+                >
+                  получить консультацию
+                </Link>
+                <Link
+                  href="/contacts"
+                  className="nav-link"
+                  onMouseEnter={() => handleOnMouseEnter("contacts")}
+                  onMouseLeave={() => handleOnMouseLeave()}
+                >
+                  контакты
+                </Link>
+              </div>
+              <motion.div
+                animate={{
+                  width: strokeWidth,
+                  marginLeft: strokeMarginLeft,
                 }}
-                onMouseLeave={() => {
-                  handleOnMouseLeave();
-                  setIsHoverServisesTitle(false);
-                }}
-              >
-                услуги
-              </span>
-              <Link
-                href="/getConsult"
-                className="nav-link"
-                onMouseEnter={() => handleOnMouseEnter("consult")}
-                onMouseLeave={() => handleOnMouseLeave()}
-              >
-                получить консультацию
-              </Link>
-              <Link
-                href="/contacts"
-                className="nav-link"
-                onMouseEnter={() => handleOnMouseEnter("contacts")}
-                onMouseLeave={() => handleOnMouseLeave()}
-              >
-                контакты
-              </Link>
+                transition={{ duration: 0.3 }}
+                className="stroke"
+              ></motion.div>
             </div>
-            <motion.div
-              animate={{
-                width: strokeWidth,
-                marginLeft: strokeMarginLeft,
-              }}
-              transition={{ duration: 0.3 }}
-              className="stroke"
-            ></motion.div>
-          </div>
-        
 
-        <div className="contacts">
-          <Image
-            src={Phone}
-            className="contact"
-            alt="TMT"
-            onClick={() => handleClickContacts("+7 985 (467) 16-29")}
-          />
-          <Image
-            src={Email}
-            className="contact"
-            alt="TMT"
-            onClick={() => handleClickContacts("ooo_tmt@mail.ru")}
-          />
-        </div>
-        <img
-          src={"/Burger.png"}
-          className="burger"
-          alt="TMT"
-          onClick={() => handleSideMenuOpen()}
-        />
-        </> : <>
-        <div className="Header_left">
-         <Image src={Logo} className="logo" alt="TMT" />
-          <div>
-            <div className="nav">
-              <Link
-                href="/"
-                className="nav-link"
-                onMouseEnter={() => handleOnMouseEnter("main")}
-                onMouseLeave={() => handleOnMouseLeave()}
-              >
-                главная
-              </Link>
-              <span
-                className="nav-link"
-                onMouseEnter={() => {
-                  handleOnMouseEnter("uslugi");
-                  setIsHoverServisesTitle(true);
-                }}
-                onMouseLeave={() => {
-                  handleOnMouseLeave();
-                  setIsHoverServisesTitle(false);
-                }}
-              >
-                услуги
-              </span>
-              <Link
-                href="/getConsult"
-                className="nav-link"
-                onMouseEnter={() => handleOnMouseEnter("consult")}
-                onMouseLeave={() => handleOnMouseLeave()}
-              >
-                получить консультацию
-              </Link>
-              <Link
-                href="/contacts"
-                className="nav-link"
-                onMouseEnter={() => handleOnMouseEnter("contacts")}
-                onMouseLeave={() => handleOnMouseLeave()}
-              >
-                контакты
-              </Link>
+            <div className="contacts">
+              <Image
+                src={Phone}
+                className="contact"
+                alt="TMT"
+                onClick={() => handleClickContacts("+7 985 (467) 16-29")}
+              />
+              <Image
+                src={Email}
+                className="contact"
+                alt="TMT"
+                onClick={() => handleClickContacts("ooo_tmt@mail.ru")}
+              />
             </div>
-            <motion.div
-              animate={{
-                width: strokeWidth,
-                marginLeft: strokeMarginLeft,
-              }}
-              transition={{ duration: 0.3 }}
-              className="stroke"
-            ></motion.div>
-          </div>
-        
+            <img
+              src={"/Burger.png"}
+              className="burger"
+              alt="TMT"
+              onClick={() => handleSideMenuOpen()}
+            />
+          </>
+        ) : (
+          <>
+            <div className="Header_left">
+              <Image src={Logo} className="logo" alt="TMT" />
+              <div>
+                <div className="nav">
+                  <Link
+                    href="/"
+                    className="nav-link"
+                    onMouseEnter={() => handleOnMouseEnter("main")}
+                    onMouseLeave={() => handleOnMouseLeave()}
+                  >
+                    главная
+                  </Link>
+                  <span
+                    className="nav-link"
+                    onMouseEnter={() => {
+                      handleOnMouseEnter("uslugi");
+                      setIsHoverServisesTitle(true);
+                    }}
+                    onMouseLeave={() => {
+                      handleOnMouseLeave();
+                      setIsHoverServisesTitle(false);
+                    }}
+                  >
+                    услуги
+                  </span>
+                  <Link
+                    href="/getConsult"
+                    className="nav-link"
+                    onMouseEnter={() => handleOnMouseEnter("consult")}
+                    onMouseLeave={() => handleOnMouseLeave()}
+                  >
+                    получить консультацию
+                  </Link>
+                  <Link
+                    href="/contacts"
+                    className="nav-link"
+                    onMouseEnter={() => handleOnMouseEnter("contacts")}
+                    onMouseLeave={() => handleOnMouseLeave()}
+                  >
+                    контакты
+                  </Link>
+                </div>
+                <motion.div
+                  animate={{
+                    width: strokeWidth,
+                    marginLeft: strokeMarginLeft,
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="stroke"
+                ></motion.div>
+              </div>
 
-        <div className="contacts">
-          <Image
-            src={Phone}
-            className="contact"
-            alt="TMT"
-            onClick={() => handleClickContacts("+7 985 (467) 16-29")}
-          />
-          <Image
-            src={Email}
-            className="contact"
-            alt="TMT"
-            onClick={() => handleClickContacts("ooo_tmt@mail.ru")}
-          />
-        </div>
-        </div>
-           <img
-          src={"/Burger.png"}
-          className="burger"
-          alt="TMT"
-          onClick={() => handleSideMenuOpen()}/>
-        
-        
-        </>
-        }
+              <div className="contacts">
+                <Image
+                  src={Phone}
+                  className="contact"
+                  alt="TMT"
+                  onClick={() => handleClickContacts("+7 985 (467) 16-29")}
+                />
+                <Image
+                  src={Email}
+                  className="contact"
+                  alt="TMT"
+                  onClick={() => handleClickContacts("ooo_tmt@mail.ru")}
+                />
+              </div>
+            </div>
+            <img
+              src={"/Burger.png"}
+              className="burger"
+              alt="TMT"
+              onClick={() => handleSideMenuOpen()}
+            />
+          </>
+        )}
       </div>
       <motion.div
         className="side_menu"
@@ -422,8 +424,14 @@ const Header = () => {
       {(isHoverServisesTitle || isHoverServises) && (
         <div
           className="servisesModal"
-          onMouseEnter={() => setIsHoverServises(true)}
-          onMouseLeave={() => setIsHoverServises(false)}
+          onMouseEnter={() => {
+            handleOnMouseEnter("uslugi");
+            setIsHoverServises(true);
+          }}
+          onMouseLeave={() => {
+            handleOnMouseLeave();
+            setIsHoverServises(false);
+          }}
         >
           <Link href="/Servise/servise1" className="servise">
             ремонт оборудования

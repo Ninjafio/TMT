@@ -33,6 +33,7 @@ export default function ConsultationForm() {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<FormData>();
 
@@ -78,6 +79,7 @@ export default function ConsultationForm() {
 
 const onSubmit: SubmitHandler<FormData> = async (data) => {
   try {
+
     const formData = new FormData();
 
     // Добавляем текстовые поля
@@ -101,6 +103,7 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
     if (result.success) {
       alert("Заявка успешно отправлена!");
       setUploadedFiles([]); // очищаем состояние
+      reset();
     } else {
       alert("Ошибка: " + result.message);
     }
@@ -109,6 +112,7 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
     alert("Ошибка при отправке формы");
   }
 };
+
   return (
     <main>
       <div className="consultTitleBl">
@@ -212,7 +216,8 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
                 value: /^[0-9+]+$/,
                 message: "Используйте только цифры, без пробелов",
               },
-              maxLength: { value: 20, message: "Максимум 20 символов" },
+              minLength: { value: 12, message: "Минимум 12 символов" },
+              maxLength: { value: 12, message: "Максимум 12 символов" },
             })}
             onFocus={(e) => {
               if (e.target.value === "") {
