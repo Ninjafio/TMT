@@ -74,6 +74,9 @@ body {
 .swiper.swiper-initialized.swiper-horizontal.img_container2_smol.swiper-backface-hidden{
 	display: none;
 }
+.img_container2_smol{
+	display: none;
+}
 
 @media (max-width: 1800px) {
 	.img-container2 {
@@ -173,7 +176,7 @@ body {
 
 	.servise-title2 {
 		font-size: 26px;
-		max-width: 530px;
+		max-width: 510px;
 	}
 
 	.servise-btn2 {
@@ -210,6 +213,7 @@ body {
 
 	.servise-title2 {
 		font-size: 22px;
+		max-width: 440px;
 	}
 }
 
@@ -247,6 +251,9 @@ body {
 	.img_container2_smol{
 		width: 100%;
 	}
+	.img_container2_smol{
+		display: block;
+	}
     .servise_header3{
 		width: 100%;
 		        display: flex
@@ -278,7 +285,6 @@ body {
 	.servise-image2,
 	.servise-content2 {
 		max-width: 430px;
-		font-size: 24px;
 	}
 
 	.servise-content2 {
@@ -286,7 +292,6 @@ body {
 	}
 
 	.servise-title2 {
-		font-size: 24px;
 	}
 
 	.servise-btn2 {

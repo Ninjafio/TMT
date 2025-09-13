@@ -178,6 +178,13 @@
 
 @media (max-width: 750px) {
 
+  .Footer__list li {
+    margin-top: 20px;
+  }
+
+  .Footer__list li:last-child {
+    margin-top: 0;
+  }
 
   .Footer_wrapper {
     flex-direction: column;
