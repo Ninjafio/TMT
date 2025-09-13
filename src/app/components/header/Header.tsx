@@ -304,7 +304,9 @@ const Header = () => {
         ) : (
           <>
             <div className="Header_left">
+            <Link href="/" className="logo">
               <Image src={Logo} className="logo" alt="TMT" />
+            </Link>
               <div>
                 <div className="nav">
                   <Link

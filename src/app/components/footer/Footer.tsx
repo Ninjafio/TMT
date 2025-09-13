@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Logo from 'public/LogoFuta.svg'
 //import UpArrow from 'public/UpArrow.svg'
 import "./Footer.scss"
+import Link from 'next/link'
 
 const Footer = () => {
 
@@ -18,7 +19,9 @@ const Footer = () => {
   return (
     <div className='Footer'>
       <div className="Footer_wrapper">
-      <Image src={Logo} alt='TMT' className='logoFuta'></Image>
+            <Link href="/" className="logoFuta">
+              <Image src={Logo} className="logoFuta" alt="TMT" />
+            </Link>
       <ul className='Footer__list'>
         <li>Контакты</li>
         <li className='Footer__list_phone'>+7 985 (467) 16-29</li>
